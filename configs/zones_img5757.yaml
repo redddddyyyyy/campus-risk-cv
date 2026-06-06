@@ -1,0 +1,35 @@
+danger_zone:
+- - 492
+  - 854
+- - 1275
+  - 856
+- - 1394
+  - 807
+- - 687
+  - 813
+risk:
+  caution_distance_m: 2.5
+  danger_distance_m: 2.5
+  meters_per_pixel: 0.01087
+  min_vehicle_speed_mph: 1.0
+homography:
+  image_points:
+  - - 494
+    - 850
+  - - 1278
+    - 855
+  - - 1394
+    - 806
+  - - 720
+    - 808
+  world_points:
+  - - 0.0
+    - 0.0
+  - - 7.15
+    - 0.0
+  - - 7.15
+    - 3.0
+  - - 0.0
+    - 3.0
+  width_m: 7.15
+  depth_m: 3.0

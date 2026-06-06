@@ -1,0 +1,35 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Model weights (download via ultralytics on first run)
+*.pt
+*.onnx
+
+# Data / video files
+data/*.mp4
+data/*.avi
+data/*.mov
+data/*.MOV
+
+# Dev outputs
+outputs/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Pytest cache
+.pytest_cache/
+
+# Temp files from tools
+.claude/
+*.lock

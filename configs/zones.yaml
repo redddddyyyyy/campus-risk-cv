@@ -1,0 +1,14 @@
+danger_zone:
+- - 90
+  - 650
+- - 710
+  - 600
+- - 760
+  - 450
+- - 55
+  - 490
+risk:
+  caution_distance_m: 5.58
+  danger_distance_m: 2.5
+  meters_per_pixel: 0.00946
+  min_vehicle_speed_mph: 2.5
