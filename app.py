@@ -8,6 +8,7 @@ from pathlib import Path
 
 import cv2
 import matplotlib.pyplot as plt
+from matplotlib.patches import Patch
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -50,6 +51,8 @@ def process_video(video_path: str, cfg: dict) -> tuple[list, str]:
     """Run the full pipeline. Returns (events, annotated_video_path)."""
     detector = DetectorTracker()
     cap      = cv2.VideoCapture(video_path)
+    if not cap.isOpened():
+        raise RuntimeError(f"Could not open video: {video_path}")
     total    = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     fps      = cap.get(cv2.CAP_PROP_FPS) or 30.0
     min_speed_px_per_frame = cfg["min_vehicle_speed_mph"] / (fps * cfg["meters_per_pixel"] * 2.237)
@@ -144,7 +147,11 @@ if run_btn:
         st.stop()
 
     with st.spinner("Running YOLO detector + risk scorer…"):
-        events, out_path = process_video(video_path, cfg)
+        try:
+            events, out_path = process_video(video_path, cfg)
+        except RuntimeError as e:
+            st.error(str(e))
+            st.stop()
 
     st.session_state.update({
         "events":   events,
@@ -209,7 +216,6 @@ if st.session_state.get("ran"):
             axes[0].set_xlabel("Time (s)")
             axes[0].set_ylabel("Distance (px)")
             axes[0].set_title("Risk Events Over Time")
-            from matplotlib.patches import Patch
             axes[0].legend(handles=[
                 Patch(color="#e63946", label="TTC_WARNING"),
                 Patch(color="#f4a261", label="PROXIMITY"),
