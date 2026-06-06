@@ -1,6 +1,6 @@
 # Campus Pedestrian-Vehicle Risk Analyzer
 
-[![Tests](https://github.com/<github-username>/campus-risk-cv/actions/workflows/tests.yml/badge.svg)](https://github.com/<github-username>/campus-risk-cv/actions)
+[![Tests](https://github.com/redddddyyyyy/campus-risk-cv/actions/workflows/tests.yml/badge.svg)](https://github.com/redddddyyyyy/campus-risk-cv/actions)
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
