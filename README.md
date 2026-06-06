@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-![Demo](assets/demo.gif)
+<!-- Demo GIF will be added here -->
 
 Detects pedestrians and vehicles from a fixed campus crosswalk camera, projects them into real-world bird's-eye-view coordinates using homography, and flags risk events when a pedestrian in the crosswalk zone gets dangerously close to a moving vehicle.
 
