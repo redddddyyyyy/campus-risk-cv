@@ -9,7 +9,7 @@ danger_zone:
   - 813
 risk:
   caution_distance_m: 2.5
-  danger_distance_m: 2.5
+  danger_distance_m: 1.25
   meters_per_pixel: 0.01087
   min_vehicle_speed_mph: 1.0
 homography:
