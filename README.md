@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/python-3.11-blue)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-<!-- Demo GIF will be added here -->
+![Demo](assets/demo.gif)
 
 Detects pedestrians and vehicles from a fixed campus crosswalk camera, projects them into real-world bird's-eye-view coordinates using homography, and flags risk events when a pedestrian in the crosswalk zone gets dangerously close to a moving vehicle.
 
@@ -59,8 +59,9 @@ The pipeline runs five stages per frame:
 |:---:|:---:|:---:|
 | pedestrian in zone, no threat | BEV distance < 2.5 m, on collision path | bbox overlap with moving vehicle |
 
-![Proximity event](assets/sample_proximity.png)
-![TTC warning event](assets/sample_ttc.png)
+![Safe — all pedestrians clear](assets/sample_safe.png)
+![Caution — pedestrian approaching vehicle](assets/sample_caution.png)
+![Proximity — close range alert](assets/sample_proximity.png)
 
 **3. Zone gate** — Only pedestrians inside the crosswalk polygon are eligible for risk scoring. A 3-frame hysteresis prevents flicker at the polygon edge.
 
@@ -107,8 +108,9 @@ campus-risk-cv/
 │   └── extract_frames.py    # extract sample frames from video
 ├── assets/
 │   ├── demo.gif             # annotated video demo
-│   ├── sample_proximity.png # PROXIMITY event example
-│   └── sample_ttc.png       # TTC_WARNING event example
+│   ├── sample_safe.png      # safe state — green boxes
+│   ├── sample_caution.png   # PROXIMITY caution event
+│   └── sample_proximity.png # PROXIMITY close-range event
 ├── data/
 │   └── README.md            # instructions for placing the source video
 ├── .github/workflows/
